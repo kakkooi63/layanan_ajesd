@@ -83,7 +83,7 @@
                             <input type="hidden" name="id" id="view_akta_id" value='<?= $i->akta_cerai_id ?>'>
                             <button type="submit" class="btn btn-outline-info mb-3" formtarget="_blank" name="diambil" value="diambil">Cetak Surat Permohonan</button>
                           </form>
-                          <a href="#" data-toggle="modal" data-target="#modalSelesai" onclick="selesai_view_akta('<?= $i->akta_cerai_id ?>')" class="btn btn-outline-info mb-3" title="Selesai"> <i class="fa fa-paper-plane" style="margin-right:0px"> Selesai</i></a>
+                          <a href="#" data-toggle="modal" data-target="#modalSelesai" onclick="selesai_view_akta('<?= $i->akta_cerai_id ?>')" class="btn btn-outline-info mb-3" title="Selesai"> <i class="fa fa-paper-plane" style="margin-right:0px"> Setujui</i></a>
 
                         <?php endif; ?>
                       </td>
@@ -139,7 +139,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <?php if ($token['role'] == ROLE_AKSES['OPERATOR_DUKCAPIL']) :  ?>
-            <button type="submit" data-toggle="modal" data-target="#modalSelesai" onclick="selesai_view_akta('<?= $i->akta_cerai_id ?>')" class="btn btn-primary">Selesai</button>
+            <!-- <button type="submit" data-toggle="modal" data-target="#modalSelesai" onclick="selesai_view_akta('<?= $i->akta_cerai_id ?>')" class="btn btn-primary">Selesai</button> -->
 
             <button type="submit" class="btn btn-danger" name="ditolak" value="ditolak">Tolak</button>
 

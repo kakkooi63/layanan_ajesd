@@ -57,19 +57,13 @@
               <table class="table table-striped table-bordered mytable">
                 <thead>
                   <tr>
-                    <!-- <th class="text-center">No.</th> -->
-                    <!-- <th>Klasifikasi</th> -->
+
                     <th>Nama</th>
                     <th>Jenis Kelamin</th>
-                    <!-- <th>No. Akta</th> -->
-                    <th>Tgl. Sidang</th>
-                    <!-- <th>KK</th>
-                    <th>KTP</th>
-                    <th>Kecamatan</th>
-                    <th>Kelurahan/Desa</th> -->
+
+                    <th>Tanggal Penjemputan</th>
                     <th>No Hp</th>
                     <th>Alamat</th>
-                    <!-- <th class="text-center">Status Anak</th> -->
                     <th class="text-center">Status</th>
                     <th class="text-center">Aksi</th>
                   </tr>
@@ -87,7 +81,7 @@
                       <td><?= $i->akta_cerai_no_ktp ?></td> -->
                       <td><?= $i->no_hp ?></td>
                       <!-- <td><?= $i->desa_nama ?></td> -->
-                      <td><?= $i->akta_cerai_alamat_baru ?></td>
+                      <td><?= $i->akta_cerai_alamat_lama ?></td>
                       <!-- <td class="text-center"><?= $i->akta_cerai_status_anak ?></td> -->
                       <td class="text-center">
                         <label class="badge badge-<?php if ($i->akta_cerai_status == AKTA_STATUS['SELESAI']) {
@@ -133,7 +127,7 @@
     <div class="modal-content">
       <form action="<?= base_url('akta_cerai/create') ?>" method="POST" enctype="multipart/form-data">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalAdd">Permohonan Antar Jemput Sidang Difabel</h5>
+          <h5 class="modal-title" id="modalAdd">Permohonan Antar Jemput Pendaftaran Perkara</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -143,13 +137,16 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Jenis Layanan :</label>
+                  <label>Klasifikasi Perkara :</label>
                   <select name="akta_cerai_klasifikasi" class="form-control" required="">
                     <option value="" selected disabled>--Pilih Klasifikasi--</option>
-                    <option value="Pendaftaran perkara" class="perkara">Pendaftaran perkara</option>
-                    <option value="Persidangan">Persidangan</option>
-                    <option value="Pengambilan Akta Cerai">Pengambilan Akta Cerai</option>
-                    <option value="Pengambilan Salinan Putusan">Pengambilan Salinan Putusan</option>
+                    <option value="Cerai Gugat" class="perkara">Cerai Gugat</option>
+                    <option value="Cerai Talak">Cerai Talak</option>
+                    <option value="Isbat Nikah">Isbat Nikah</option>
+                    <option value="Harta Bersama">Harta Bersama</option>
+                    <option value="Kewarisan">Kewarisan</option>
+                    <option value="Wali Adhol">Wali Adhol</option>
+                    <option value="Izin Poligami">Izin Poligami</option>
                   </select>
                 </div>
               </div>
@@ -157,10 +154,10 @@
                 <div class="form-group">
                   <?php
                   $stop_date = date('Y-m-d');
-                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +3 day'));
+                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +2 day'));
 
                   ?>
-                  <label>Tanggal Sidang:</label>
+                  <label>Tanggal Penjemputan:</label>
                   <input type="date" min="<?php echo $stop_date; ?>" max="" class="form-control" name="akta_cerai_tanggal" placeholder="Tanggal Sidang" id="perkara" required>
                 </div>
               </div>
@@ -169,14 +166,15 @@
 
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>No. Perkara:</label>
-                  <input type="text" class="form-control" name="akta_cerai_nomor" placeholder="No. Perkara" required>
+                  <label>No. KTP:</label>
+                  <input type="text" class="form-control" name="akta_cerai_no_ktp" placeholder="No. KTP" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Nama Lengkap:</label>
                   <input type="text" class="form-control" name="akta_cerai_nama" placeholder="Nama Lengkap" required>
+                  <input type="hidden" class="form-control" name="jenis_layanan" value="pendaftaran">
                 </div>
               </div>
               <!-- <div class="col-md-6">
@@ -241,7 +239,7 @@
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>Alamat:</label>
+                  <label>Alamat Lengkap:</label>
                   <textarea class="form-control" placeholder="Tulis Alamat Lengkap Disini" name="akta_cerai_alamat" required></textarea>
                 </div>
               </div>
@@ -314,7 +312,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalAdd">Data Permohonan</h5>
+        <h5 class="modal-title" id="modalAdd">Data Permohonan Antar Jemput Pendaftaran Perkara</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -379,13 +377,16 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Klasifikasi:</label>
+                  <label>Klasifikasi Perkara:</label>
                   <select name="akta_cerai_klasifikasi" id="edit_akta_cerai_klasifikasi" class="form-control" required="">
-                    <option value="" selected disabled>--Pilih Klasifikasi--</option>
-                    <option value="Pemohon">Pemohon</option>
-                    <option value="Termohon">Termohon</option>
-                    <option value="Penggugat">Penggugat</option>
-                    <option value="Tergugat">Tergugat</option>
+                  <option value="" selected disabled>--Pilih Klasifikasi--</option>
+                    <option value="Cerai Gugat" class="perkara">Cerai Gugat</option>
+                    <option value="Cerai Talak">Cerai Talak</option>
+                    <option value="Isbat Nikah">Isbat Nikah</option>
+                    <option value="Harta Bersama">Harta Bersama</option>
+                    <option value="Kewarisan">Kewarisan</option>
+                    <option value="Wali Adhol">Wali Adhol</option>
+                    <option value="Izin Poligami">Izin Poligami</option>
                   </select>
                 </div>
               </div>
@@ -393,17 +394,17 @@
                 <div class="form-group">
                   <?php
                   $stop_date = date('Y-m-d');
-                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +3 day'));
+                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +2 day'));
 
                   ?>
-                  <label>Tanggal Sidang:</label>
+                  <label>Tanggal Penjemputan :</label>
                   <input type="date" min="<?php echo $stop_date; ?>" max="" class="form-control" name="akta_cerai_tanggal" id="edit_akta_cerai_tanggal" placeholder="Tanggal Akta Cerai" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>No. Perkara:</label>
-                  <input type="text" class="form-control" id="edit_akta_cerai_nomor" name="akta_cerai_nomor" placeholder="No. Akta Cerai">
+                  <label>No. KTP:</label>
+                  <input type="text" class="form-control" id="edit_akta_cerai_no_ktp" name="akta_cerai_no_ktp" placeholder="No. KTP">
                   <input type="hidden" class="form-control" id="edit_akta_cerai_id" name="akta_cerai_id">
                 </div>
               </div>
@@ -476,7 +477,7 @@
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>Alamat:</label>
+                  <label>Alamat Lengkap :</label>
                   <textarea class="form-control" id="edit_akta_cerai_alamat_lama" placeholder="Tulis Alamat Lengkap Disini" name="akta_cerai_alamat"></textarea>
                 </div>
               </div>
@@ -486,7 +487,7 @@
                   <input type="text" class="inputAddress input-xxxlarge form-control" value="Jl. Merdeka LK. I No.497, Lingkungan 1, Serasan Jaya, Sekayu, Kabupaten Musi Banyuasin, Sumatera Selatan 30711, Indonesia" name="inputAddress" autocomplete="off" placeholder="Type in your address" id="titik_lokasi">
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6" hidden>
                 <div class="form-group">
                   <label>Latitude</label>
                   <input type="text" class="latitude form-control" id="latitude" name="latitude" readonly>
@@ -555,7 +556,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalAdd">Delete Akta Cerai</h5>
+        <h5 class="modal-title" id="modalAdd">Delete Data Permohonan</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

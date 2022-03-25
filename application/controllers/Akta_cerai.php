@@ -408,6 +408,7 @@ class Akta_cerai extends MY_Controller
 			'akta_cerai_status' => $akta_cerai_status,
 			'no_hp' => $no_hp,
 			'longitude' => $longitude,
+			'keterangan' => $keterangan,
 			'akta_cerai_file_akta' => isset($akta_cerai_file_akta) ? $akta_cerai_file_akta : null,
 			'akta_cerai_file_ktp' => isset($akta_cerai_file_ktp) ? $akta_cerai_file_ktp : null,
 			'updated_at' => date('Y-m-d H:i:s'),

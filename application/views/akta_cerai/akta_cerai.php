@@ -56,19 +56,11 @@
               <table class="table table-striped table-bordered mytable">
                 <thead>
                   <tr>
-                    <!-- <th class="text-center">No.</th> -->
-                    <!-- <th>Klasifikasi</th> -->
                     <th>Nama</th>
                     <th>Jenis Kelamin</th>
-                    <!-- <th>No. Akta</th> -->
-                    <th>Tgl. Sidang</th>
-                    <!-- <th>KK</th>
-                    <th>KTP</th>
-                    <th>Kecamatan</th>
-                    <th>Kelurahan/Desa</th> -->
+                    <th>Tanggal Penjemputan</th>
                     <th>No Hp</th>
                     <th>Alamat</th>
-                    <!-- <th class="text-center">Status Anak</th> -->
                     <th class="text-center">Status</th>
                     <th class="text-center">Aksi</th>
                   </tr>
@@ -86,7 +78,7 @@
                       <td><?= $i->akta_cerai_no_ktp ?></td> -->
                       <td><?= $i->no_hp ?></td>
                       <!-- <td><?= $i->desa_nama ?></td> -->
-                      <td><?= $i->akta_cerai_alamat_baru ?></td>
+                      <td><?= $i->akta_cerai_alamat_lama ?></td>
                       <!-- <td class="text-center"><?= $i->akta_cerai_status_anak ?></td> -->
                       <td class="text-center">
                         <label class="badge badge-<?php if ($i->akta_cerai_status == AKTA_STATUS['SELESAI']) {
@@ -157,7 +149,7 @@
                   $stop_date = date('Y-m-d', strtotime($stop_date . ' +3 day'));
 
                   ?>
-                  <label>Tanggal Sidang:</label>
+                  <label>Tanggal Penjemputan:</label>
                   <input type="date" min="<?php echo $stop_date; ?>" max="" class="form-control" name="akta_cerai_tanggal" placeholder="Tanggal Akta Cerai" required>
                 </div>
               </div>
@@ -215,7 +207,7 @@
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>Alamat:</label>
+                  <label>Alamat Lengkap:</label>
                   <textarea class="form-control" placeholder="Tulis Alamat Lengkap Disini" name="akta_cerai_alamat" required></textarea>
                 </div>
               </div>
@@ -271,7 +263,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalAdd">Data Permohonan</h5>
+        <h5 class="modal-title" id="modalAdd">Data Permohonan Antar Jemput Sidang Difabel</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -353,7 +345,7 @@
                   $stop_date = date('Y-m-d', strtotime($stop_date . ' +3 day'));
 
                   ?>
-                  <label>Tanggal Sidang:</label>
+                  <label>Tanggal Penjemputan:</label>
                   <input type="date" min="<?php echo $stop_date; ?>" max="" class="form-control" name="akta_cerai_tanggal" id="edit_akta_cerai_tanggal" placeholder="Tanggal Akta Cerai" required>
                 </div>
               </div>
@@ -433,7 +425,7 @@
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>Alamat:</label>
+                  <label>Alamat Lengkap:</label>
                   <textarea class="form-control" id="edit_akta_cerai_alamat_lama" placeholder="Tulis Alamat Lengkap Disini" name="akta_cerai_alamat"></textarea>
                 </div>
               </div>

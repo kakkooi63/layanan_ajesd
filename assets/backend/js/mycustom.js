@@ -19,7 +19,7 @@ function view_akta(id,role){
 		dump_identitas = `
 		<div class="row mt-1 pb-1">
 		<div class="col-md-4">
-		<h6><b>Tanggal Sidang</b></h6>
+		<h6><b>Tanggal Penjemputan</b></h6>
 		</div>
 		<div class="col-md-6">
 		<span class="text-muted">`+data[1]+`</span>

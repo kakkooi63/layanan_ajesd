@@ -43,13 +43,16 @@
                               <i class="fa fa-pencil-square-o"></i><span>Pendaftaran Perkara</span>
                               <?php if (isset($sum)) {
                                  if ($sum[0]->dilihat > 0 && $token['role'] == ROLE_AKSES['OPERATOR_PENGADILAN']) : ?>
-                                    <label class="badge badge-primary"><?= $sum[0]->dilihat + $sum[0]->belum_dilihat + $sum[0]->bersiap; ?></label>
+                                    <label class="badge badge-primary"><?= $sum[0]->dilihat + $sum[0]->belum_dilihat + $sum[0]->bersiap + $sum[0]->diproses; ?></label>
                                  <?php endif;
                                  if ($sum[0]->belum_dilihat > 0 && $token['role'] == ROLE_AKSES['OPERATOR_PENGADILAN']) : ?>
                                     <label class="badge badge-primary"><?= $sum[0]->belum_dilihat + $sum[0]->dilihat + $sum[0]->bersiap; ?></label>
                                  <?php endif;
                                  if ($sum[0]->diproses > 0 && $token['role'] == ROLE_AKSES['OPERATOR_PENGADILAN']) : ?>
                                     <label class="badge badge-primary"><?= $sum[0]->belum_dilihat + $sum[0]->dilihat + $sum[0]->bersiap + $sum[0]->diproses; ?></label>
+                                 <?php endif;
+                                 if ($sum[0]->disetujui > 0 && $token['role'] == ROLE_AKSES['OPERATOR_PENGADILAN']) : ?>
+                                    <label class="badge badge-primary"><?= $sum[0]->belum_dilihat + $sum[0]->dilihat + $sum[0]->bersiap + $sum[0]->disetujui; ?></label>
                                  <?php endif;
                                  if ($sum[0]->bersiap > 0 && $token['role'] == ROLE_AKSES['OPERATOR_PENGADILAN']) : ?>
                                     <label class="badge badge-primary"><?= $sum[0]->belum_dilihat + $sum[0]->dilihat + $sum[0]->bersiap + $sum[0]->diproses; ?></label>
