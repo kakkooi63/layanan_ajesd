@@ -18,7 +18,9 @@ class Akta_cerai extends MY_Controller
 			redirect('login');
 			exit;
 		}
+		$username = $this->data['token']['username'];
 
+		$this->data['sum_one'] = $this->akta_cerai_m->get_sum_status_one($username);
 		$this->data['sum'] = $this->akta_cerai_m->get_sum_status();
 	}
 
@@ -41,6 +43,7 @@ class Akta_cerai extends MY_Controller
 			$this->data['kecamatan'] = $this->kecamatan_m->get();
 			$this->data['title']    = 'Permohonan Antar Jemput Sidang Difabel';
 			$this->data['content']  = 'akta_cerai/akta_cerai';
+
 			$this->template($this->data);
 			if ($tanggal_sekarang > $tanggal_sidang) {
 				// var_dump($tanggal_sidang);
@@ -178,11 +181,18 @@ class Akta_cerai extends MY_Controller
 	}
 	public function selesai()
 	{
-
-		$this->data['akta_fix'] = $this->akta_cerai_m->get_akta_by_fix($this->data['token']['role']);
-		$this->data['title']    = 'Selesai';
-		$this->data['content']  = 'akta_cerai/selesai';
-		$this->template($this->data);
+		$username = $this->data['token']['username'];
+		if ($this->data['token']['role'] == 'Operator Pengadilan') {
+			$this->data['akta_fix'] = $this->akta_cerai_m->get_akta_by_fix_user($username);
+			$this->data['title']    = 'Selesai';
+			$this->data['content']  = 'akta_cerai/selesai';
+			$this->template($this->data);
+		} else {
+			$this->data['akta_fix'] = $this->akta_cerai_m->get_akta_by_fix($this->data['token']['role']);
+			$this->data['title']    = 'Selesai';
+			$this->data['content']  = 'akta_cerai/selesai';
+			$this->template($this->data);
+		}
 	}
 	public function penjemputan()
 	{

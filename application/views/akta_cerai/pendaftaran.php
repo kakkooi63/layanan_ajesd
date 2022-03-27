@@ -9,6 +9,7 @@
             </div>
             <div class="iq-card-header-toolbar d-flex align-items-center">
               <?php foreach ($akta as $v => $i) : ?>
+
               <?php endforeach; ?>
 
               <?php if ($token['role'] == ROLE_AKSES['OPERATOR_PENGADILAN']) { ?>
@@ -379,7 +380,7 @@
                 <div class="form-group">
                   <label>Klasifikasi Perkara:</label>
                   <select name="akta_cerai_klasifikasi" id="edit_akta_cerai_klasifikasi" class="form-control" required="">
-                  <option value="" selected disabled>--Pilih Klasifikasi--</option>
+                    <option value="" selected disabled>--Pilih Klasifikasi--</option>
                     <option value="Cerai Gugat" class="perkara">Cerai Gugat</option>
                     <option value="Cerai Talak">Cerai Talak</option>
                     <option value="Isbat Nikah">Isbat Nikah</option>

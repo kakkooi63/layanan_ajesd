@@ -15,7 +15,9 @@ class Home extends MY_Controller
 			redirect('login');
 			exit;
 		}
+		$username = $this->data['token']['username'];
 		$this->data['sum'] = $this->akta_cerai_m->get_sum_status();
+		$this->data['sum_one'] = $this->akta_cerai_m->get_sum_status_one($username);
 	}
 
 	public function index()

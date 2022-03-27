@@ -73,12 +73,28 @@ class Akta_cerai_m extends MY_Model
 			sum(case when akta_cerai_status = 'Belum Dilihat' then 1 else 0 end) AS belum_dilihat,
 			sum(case when akta_cerai_status = 'Dilihat' then 1 else 0 end) AS dilihat,
 			sum(case when akta_cerai_status = 'Diproses' then 1 else 0 end) AS diproses,
+			sum(case when akta_cerai_status = 'Ditolak' then 1 else 0 end) AS ditolak,
 			sum(case when akta_cerai_status = 'Disetujui Penjemputan' then 1 else 0 end) AS disetujui,
 			sum(case when akta_cerai_status = 'Bersiaplah Petugas Menuju Ke Lokasi' then 1 else 0 end) AS bersiap,
 			sum(case when akta_cerai_status = 'Selesai' then 1 else 0 end) AS selesai,
 			sum(case when akta_cerai_status = 'Diterima' then 1 else 0 end) AS diterima,
 			sum(case when akta_cerai_status = 'Dikembalikan' then 1 else 0 end) AS dikembalikan
 			FROM akta_cerai")->result();
+		return $q;
+	}
+	public function get_sum_status_one($username)
+	{
+		$q = $this->db->query("SELECT 
+			sum(case when akta_cerai_status = 'Belum Dilihat' then 1 else 0 end) AS belum_dilihat,
+			sum(case when akta_cerai_status = 'Dilihat' then 1 else 0 end) AS dilihat,
+			sum(case when akta_cerai_status = 'Diproses' then 1 else 0 end) AS diproses,
+			sum(case when akta_cerai_status = 'Ditolak' then 1 else 0 end) AS ditolak,
+			sum(case when akta_cerai_status = 'Disetujui Penjemputan' then 1 else 0 end) AS disetujui,
+			sum(case when akta_cerai_status = 'Bersiaplah Petugas Menuju Ke Lokasi' then 1 else 0 end) AS bersiap,
+			sum(case when akta_cerai_status = 'Selesai' then 1 else 0 end) AS selesai,
+			sum(case when akta_cerai_status = 'Diterima' then 1 else 0 end) AS diterima,
+			sum(case when akta_cerai_status = 'Dikembalikan' then 1 else 0 end) AS dikembalikan
+			FROM akta_cerai WHERE user_name = '$username'")->result();
 		return $q;
 	}
 

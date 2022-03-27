@@ -9,6 +9,7 @@
             </div>
             <div class="iq-card-header-toolbar d-flex align-items-center">
               <?php foreach ($akta as $v => $i) : ?>
+
               <?php endforeach; ?>
 
               <?php if ($token['role'] == ROLE_AKSES['OPERATOR_PENGADILAN']) { ?>
