@@ -109,7 +109,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url('akta_cerai/do_cetak') ?>" method="POST">
+      <form action="<?= base_url('ajesd/do_cetak') ?>" method="POST">
         <div class="modal-body">
           <div class="iq-card-body">
             <ul class="nav nav-pills mb-3 nav-fill" id="pills-tab-1" role="tablist">

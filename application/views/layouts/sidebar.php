@@ -24,7 +24,7 @@ $username = $token['username'];
 
                <?php if ($token['role'] == ROLE_AKSES['OPERATOR_DUKCAPIL']) :  ?>
                   <li class="<?= $title == 'Akta Cerai' ? 'active' : '' ?>">
-                     <a href="<?= base_url('akta-cerai/permohonan') ?>" class="iq-waves-effect">
+                     <a href="<?= base_url('ajesd/permohonan') ?>" class="iq-waves-effect">
                         <i class="fa fa-folder-open"></i><span>Permohonan</span>
                         <?php if (isset($sum)) {
                            if ($sum[0]->dilihat > 0 && $token['role'] == ROLE_AKSES['OPERATOR_DUKCAPIL']) : ?>
@@ -42,7 +42,7 @@ $username = $token['username'];
                   <li>
                      <a href="#ecommerce" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="fa fa-car"></i><span>Layanan Antar Jemput</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                      <ul id="ecommerce" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li><a href="<?= base_url('akta-cerai/pendaftaran') ?>">
+                        <li><a href="<?= base_url('ajesd/pendaftaran') ?>">
 
                               <i class="fa fa-pencil-square-o"></i><span>Pendaftaran Perkara</span>
                               <?php if (isset($sum_one)) {
@@ -62,7 +62,7 @@ $username = $token['username'];
                                     <label class="badge badge-primary"><?= $sum_one[0]->belum_dilihat + $sum_one[0]->dilihat + $sum_one[0]->bersiap + $sum_one[0]->diproses; ?></label>
                               <?php endif;
                               } ?></a></li>
-                        <li><a href="<?= base_url('akta-cerai') ?>">
+                        <li><a href="<?= base_url('ajesd') ?>">
 
                               <i class="fa fa-university"></i><span>Persidangan</span>
                               <?php if (isset($sum_one)) {
@@ -73,7 +73,7 @@ $username = $token['username'];
                                     <label class="badge badge-primary"><?= $sum_one[0]->belum_dilihat + $sum_one[0]->dilihat; ?></label>
                               <?php endif;
                               } ?></a></li>
-                        <li><a href="<?= base_url('akta-cerai/produk') ?>">
+                        <li><a href="<?= base_url('ajesd/produk') ?>">
 
                               <i class="fa fa-shopping-cart "></i><span>Pengambilan Produk</span>
                               <?php if (isset($sum_one)) {
@@ -93,7 +93,7 @@ $username = $token['username'];
 
                <?php if ($token['role'] == ROLE_AKSES['OPERATOR_DUKCAPIL']) :  ?>
                   <li class="<?= $title == 'Akta Proses' ? 'active' : '' ?>">
-                     <a href="<?= base_url('akta-cerai/proses') ?>" class="iq-waves-effect">
+                     <a href="<?= base_url('ajesd/proses') ?>" class="iq-waves-effect">
                         <i class="fa fa-hourglass-half"></i><span>Proses Validasi</span>
                         <?php if (isset($sum[0]->diproses)) {
                            if ($sum[0]->diproses > 0 && $token['role'] == ROLE_AKSES['OPERATOR_PENGADILAN'] || ROLE_AKSES['OPERATOR_DUKCAPIL']) : ?>
@@ -107,7 +107,7 @@ $username = $token['username'];
 
                <?php if ($token['role'] == ROLE_AKSES['OPERATOR_DUKCAPIL']) :  ?>
                   <li class="<?= $title == 'Proses Penjemputan' ? 'active' : '' ?>">
-                     <a href="<?= base_url('akta-cerai/penjemputan') ?>" class="iq-waves-effect">
+                     <a href="<?= base_url('ajesd/penjemputan') ?>" class="iq-waves-effect">
                         <i class="fa fa-car"></i><span>Penjemputan</span>
                         <?php if (isset($sum[0]->disetujui)) {
                            if ($sum[0]->disetujui > 0 && $token['role'] == ROLE_AKSES['OPERATOR_PENGADILAN'] || ROLE_AKSES['OPERATOR_DUKCAPIL']) : ?>
@@ -119,7 +119,7 @@ $username = $token['username'];
                <?php endif; ?>
                <?php if ($token['role'] == ROLE_AKSES['OPERATOR_DUKCAPIL']) :  ?>
                   <li class="<?= $title == 'Akta Selesai' ? 'active' : '' ?>">
-                     <a href="<?= base_url('akta-cerai/selesai') ?>" class="iq-waves-effect">
+                     <a href="<?= base_url('ajesd/selesai') ?>" class="iq-waves-effect">
                         <i class="fa fa-check"></i><span>Selesai</span>
                         <?php if (isset($sum[0]->selesai)) {
                            if ($sum[0]->selesai > 0 && $token['role'] == ROLE_AKSES['OPERATOR_DUKCAPIL']) : ?>
@@ -131,7 +131,7 @@ $username = $token['username'];
                <?php endif; ?>
                <?php if ($token['role'] == ROLE_AKSES['OPERATOR_PENGADILAN']) :  ?>
                   <li class="<?= $title == 'Akta Selesai' ? 'active' : '' ?>">
-                     <a href="<?= base_url('akta-cerai/selesai') ?>" class="iq-waves-effect">
+                     <a href="<?= base_url('ajesd/selesai') ?>" class="iq-waves-effect">
                         <i class="fa fa-check"></i><span>Selesai</span>
                         <?php if (isset($sum_one[0]->selesai)) {
                            if ($sum_one[0]->selesai > 0 && $token['role'] == ROLE_AKSES['OPERATOR_PENGADILAN']) : ?>

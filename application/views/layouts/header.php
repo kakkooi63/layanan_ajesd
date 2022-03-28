@@ -4,7 +4,7 @@
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title> <?= $title ?> | SERASAN SEKATE</title>
+   <title> <?= $title ?> | AJESD</title>
    <link rel="shortcut icon" href="<?= base_url('assets/logo/sekayu.png') ?>" />
    <link rel="stylesheet" href="<?= assets_backend() ?>css/bootstrap.min.css">
    <link rel="stylesheet" href="<?= assets_backend() ?>css/typography.css">

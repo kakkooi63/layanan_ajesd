@@ -79,7 +79,7 @@
                       <td class="text-center">
                         <a href='"#"' data-toggle="modal" data-target="#modalView" onclick="view_akta('<?= $i->akta_cerai_id ?>','<?= $token['role']; ?>')" class="btn btn-outline-info mb-3" title="Lihat"><i class="fa fa-eye" style="margin-right:0px"></i> View</a>
                         <?php if ($token['role'] == ROLE_AKSES['OPERATOR_DUKCAPIL']) :  ?>
-                          <form action="<?= base_url('akta_cerai/do_cetak') ?>" method="POST">
+                          <form action="<?= base_url('ajesd/do_cetak') ?>" method="POST">
                             <input type="hidden" name="id" id="view_akta_id" value='<?= $i->akta_cerai_id ?>'>
                             <button type="submit" class="btn btn-outline-info mb-3" formtarget="_blank" name="diambil" value="diambil">Cetak Surat Permohonan</button>
                           </form>
@@ -110,7 +110,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url('akta_cerai/do_proses') ?>" method="POST">
+      <form action="<?= base_url('ajesd/do_proses') ?>" method="POST">
         <div class="modal-body">
           <div class="iq-card-body">
             <ul class="nav nav-pills mb-3 nav-fill" id="pills-tab-1" role="tablist">
@@ -159,7 +159,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url('akta_cerai/do_selesai') ?>" method="POST">
+      <form action="<?= base_url('ajesd/do_selesai') ?>" method="POST">
 
         Apakah anda yakin ingin menyelesaikan proses ini ?
         <input type="hidden" name="id" id="selesai_view_akta_id">

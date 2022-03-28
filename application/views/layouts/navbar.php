@@ -41,7 +41,7 @@
               <div class="iq-card-body p-0 ">
                 <div class="bg-primary p-3">
                   <h5 class="mb-0 text-white line-height"><?= $token['nama']; ?></h5>
-                  <span class="text-white font-size-12"><?= $token['role']; ?></span>
+                  <!-- <span class="text-white font-size-12"><?= $token['role']; ?></span> -->
                 </div>
                 <div class="d-inline-block w-100 text-center p-3">
                   <a class="iq-bg-danger iq-sign-btn" href="<?= base_url('logout') ?>" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>

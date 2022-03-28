@@ -9,7 +9,7 @@
  				</ul> -->
  			</div>
  			<div class="col-lg-6 text-right" style="font-family: Raleway, sans-serif" ;>
- 				Copyright 2021 Tim IT Pengadilan Agama Sekayu.
+ 				Copyright 2022 IT PA Sekayu.
  			</div>
  		</div>
  </footer>

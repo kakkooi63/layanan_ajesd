@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script allowed');
 
-class Akta_cerai extends MY_Controller
+class Ajesd extends MY_Controller
 {
 
 	public function __construct()
@@ -31,7 +31,7 @@ class Akta_cerai extends MY_Controller
 		$x = $this->data['token']['role'];
 		$akta = $this->akta_cerai_m->get_by_user($username);
 		foreach ($akta as $v => $i) :
-			$i->akta_cerai_tanggal;
+			@$i->akta_cerai_tanggal;
 		endforeach;
 		$tanggal_sekarang = date('Y-m-d');
 		$tanggal_sidang = @$i->akta_cerai_tanggal;
@@ -108,7 +108,7 @@ class Akta_cerai extends MY_Controller
 		$tanggal_sidang = @$i->akta_cerai_tanggal;
 		@$id = @$i->akta_cerai_id;
 
-		var_dump($tanggal_sidang);
+		// var_dump($tanggal_sidang);
 		if ($this->data['token']['role'] == 'Operator Pengadilan') {
 			$this->data['akta'] = $this->akta_cerai_m->get_by_pendaftaran($username);
 			$this->data['kecamatan'] = $this->kecamatan_m->get();
@@ -142,7 +142,7 @@ class Akta_cerai extends MY_Controller
 		$x = $this->data['token']['role'];
 		$akta = $this->akta_cerai_m->get_by_produk($username);
 		foreach ($akta as $v => $i) :
-			$i->akta_cerai_tanggal;
+			@$i->akta_cerai_tanggal;
 		endforeach;
 		$tanggal_sekarang = date('Y-m-d');
 		$tanggal_sidang = @$i->akta_cerai_tanggal;

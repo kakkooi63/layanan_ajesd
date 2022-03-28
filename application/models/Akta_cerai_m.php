@@ -30,6 +30,14 @@ class Akta_cerai_m extends MY_Model
 		")->result();
 		return $q;
 	}
+	public function get_all($username)
+	{
+		$q = $this->db->query("SELECT * FROM akta_cerai a INNER JOIN kecamatan b ON a.kecamatan_id=b.kecamatan_id INNER JOIN desa c ON a.desa_id=c.desa_id 
+		WHERE a.user_name ='$username' AND a.akta_cerai_status != 'Selesai'
+		ORDER BY a.akta_cerai_id DESC
+		")->result();
+		return $q;
+	}
 	public function get_by_produk($username)
 	{
 		$q = $this->db->query("SELECT * FROM akta_cerai a INNER JOIN kecamatan b ON a.kecamatan_id=b.kecamatan_id INNER JOIN desa c ON a.desa_id=c.desa_id 

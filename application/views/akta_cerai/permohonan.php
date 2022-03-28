@@ -126,7 +126,7 @@
         </button>
       </div>
 
-      <form action="<?= base_url('akta_cerai/do_proses') ?>" method="POST">
+      <form action="<?= base_url('ajesd/do_proses') ?>" method="POST">
 
         <div class="modal-body">
           <div class="iq-card-body">
@@ -175,7 +175,7 @@
 <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalAdd" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <form action="<?= base_url('akta_cerai/update') ?>" method="POST" enctype="multipart/form-data">
+      <form action="<?= base_url('ajesd/update') ?>" method="POST" enctype="multipart/form-data">
         <div class="modal-header">
           <h5 class="modal-title" id="modalAdd">Edit Data Pemohon</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -368,7 +368,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form method="POST" action="<?= base_url('akta_cerai/delete') ?>">
+      <form method="POST" action="<?= base_url('ajesd/delete') ?>">
         <div class="modal-body">
           <div class="iq-card-body">
             <input type="hidden" name="id" id="delete_id">

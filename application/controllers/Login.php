@@ -19,7 +19,7 @@ class Login extends MY_Controller
 
 	public function index()
 	{
-		$this->data['title']    = 'SAC';
+		$this->data['title']    = 'AJESD';
 		if (isset($_POST['login'])) {
 
 			$username = $this->input->post('username');
@@ -74,7 +74,7 @@ class Login extends MY_Controller
 			}
 		}
 		$this->data['slide'] = $this->slide_m->get_by_order('slide_id', 'DESC');
-		$this->load->view('login2', $this->data);
+		$this->load->view('beranda', $this->data);
 	}
 
 	public function daftar()
