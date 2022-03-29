@@ -135,13 +135,11 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Klasifikasi:</label>
+                  <label>Produk yang akan diambil:</label>
                   <select name="akta_cerai_klasifikasi" class="form-control" required="">
                     <option value="" selected disabled>--Pilih Klasifikasi--</option>
-                    <option value="Pemohon">Pemohon</option>
-                    <option value="Termohon">Termohon</option>
-                    <option value="Penggugat">Penggugat</option>
-                    <option value="Tergugat">Tergugat</option>
+                    <option value="Akta cerai">Akta Cerai</option>
+                    <option value="Salinan putusan">Salinan Putusan</option>
                   </select>
                 </div>
               </div>
@@ -149,10 +147,10 @@
                 <div class="form-group">
                   <?php
                   $stop_date = date('Y-m-d');
-                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +3 day'));
+                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +2 day'));
 
                   ?>
-                  <label>Tanggal Sidang:</label>
+                  <label>Tanggal Penjemputan:</label>
                   <input type="date" min="<?php echo $stop_date; ?>" max="" class="form-control" name="akta_cerai_tanggal" placeholder="Tanggal Akta Cerai" required>
                 </div>
               </div>
@@ -168,28 +166,7 @@
                   <input type="text" class="form-control" name="akta_cerai_nama" placeholder="Nama Lengkap" required>
                 </div>
               </div>
-              <!-- <div class="col-md-6">
-                <div class="form-group">
-                  <label>No. Kartu Keluarga:</label>
-                  <input type="text" class="form-control" name="akta_cerai_no_kk" placeholder="No.  Kartu Keluarga" required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>No. KTP:</label>
-                  <input type="text" class="form-control" name="akta_cerai_no_ktp" placeholder="No. KTP" required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Status Anak:</label>
-                  <select class="form-control" name="akta_cerai_status_anak" required="">
-                    <option value="" selected disabled>--Pilih Status--</option>
-                    <option value="Ikut">Ikut</option>
-                    <option value="Tidak Ikut">Tidak Ikut</option>
-                  </select>
-                </div>
-              </div> -->
+
               <div class="col-md-6">
                 <div class="form-group">
                   <label>No Handphone:</label>
@@ -368,13 +345,11 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label>Klasifikasi:</label>
-                  <select name="akta_cerai_klasifikasi" id="edit_akta_cerai_klasifikasi" class="form-control" required="">
+                  <label>Produk yang akan diambil:</label>
+                  <select name="akta_cerai_klasifikasi" class="form-control" required="">
                     <option value="" selected disabled>--Pilih Klasifikasi--</option>
-                    <option value="Pemohon">Pemohon</option>
-                    <option value="Termohon">Termohon</option>
-                    <option value="Penggugat">Penggugat</option>
-                    <option value="Tergugat">Tergugat</option>
+                    <option value="Akta cerai">Akta Cerai</option>
+                    <option value="Salinan putusan">Salinan Putusan</option>
                   </select>
                 </div>
               </div>
@@ -382,10 +357,10 @@
                 <div class="form-group">
                   <?php
                   $stop_date = date('Y-m-d');
-                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +3 day'));
+                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +2 day'));
 
                   ?>
-                  <label>Tanggal Sidang:</label>
+                  <label>Tanggal Penjemputan:</label>
                   <input type="date" min="<?php echo $stop_date; ?>" max="" class="form-control" name="akta_cerai_tanggal" id="edit_akta_cerai_tanggal" placeholder="Tanggal Akta Cerai" required>
                 </div>
               </div>
@@ -408,28 +383,7 @@
                   <input type="text" class="form-control" name="no_hp" id="edit_no_hp" placeholder="No Handphone" required>
                 </div>
               </div>
-              <!-- <div class="col-md-6">
-                <div class="form-group">
-                  <label>No. Kartu Keluarga:</label>
-                  <input type="text" class="form-control" id="edit_akta_cerai_no_kk" name="akta_cerai_no_kk" placeholder="No.  Kartu Keluarga">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>No. KTP:</label>
-                  <input type="text" class="form-control" id="edit_akta_cerai_no_ktp" name="akta_cerai_no_ktp" placeholder="No. KTP">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Status Anak:</label>
-                  <select class="form-control" name="akta_cerai_status_anak" id="edit_akta_cerai_status_anak" required="">
-                    <option value="" selected disabled>--Pilih Status--</option>
-                    <option value="Ikut">Ikut</option>
-                    <option value="Tidak Ikut">Tidak Ikut</option>
-                  </select>
-                </div>
-              </div> -->
+
               <div class="col-md-6 text-center pt-2">
                 <div class="form-group">
                   <label>Jenis Kelamin:</label><br>
@@ -465,7 +419,7 @@
               </div>
               <div class="col-md-12">
                 <div class="form-group">
-                  <label>Alamat:</label>
+                  <label>Alamat Lengkap:</label>
                   <textarea class="form-control" id="edit_akta_cerai_alamat_lama" placeholder="Tulis Alamat Lengkap Disini" name="akta_cerai_alamat"></textarea>
                 </div>
               </div>
@@ -544,7 +498,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalAdd">Delete Akta Cerai</h5>
+        <h5 class="modal-title" id="modalAdd">Delete Data Permohonan</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

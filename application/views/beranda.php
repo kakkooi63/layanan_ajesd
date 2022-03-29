@@ -231,7 +231,8 @@
                 <a href="#service"> <i class="fas fa-chevron-right"></i> layanan </a>
                 <a href="#about"> <i class="fas fa-chevron-right"></i> about </a>
                 <a href="#book"> <i class="fas fa-chevron-right"></i> daftar </a>
-                <a href="#review"> <i class="fas fa-chevron-right"></i> login </a>
+                <a data-toggle="modal" href="#myModal"> <i class="fas fa-chevron-right"></i> login </a>
+
             </div>
 
             <!-- <div class="box">

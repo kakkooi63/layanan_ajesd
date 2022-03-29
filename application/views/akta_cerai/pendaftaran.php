@@ -182,6 +182,7 @@
                 <div class="form-group">
                   <label>No. KTP:</label>
                   <input type="text" class="form-control" name="akta_cerai_no_ktp" placeholder="No. KTP" required>
+                  <input type="hidden" class="form-control" name="akta_cerai_nomor" value="-">
                 </div>
               </div>
               <div class="col-md-6">
@@ -502,7 +503,7 @@
                 </div>
               </div>
               <div class="col-md-6" hidden>
-                <div class="form-group">
+                <div class="form-group" hidden>
                   <label>Latitude</label>
                   <input type="text" class="latitude form-control" id="latitude" name="latitude" readonly>
                   <label>longitude</label>

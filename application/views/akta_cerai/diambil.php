@@ -105,7 +105,7 @@ function tgl_indo($tanggal)
 						No Perkara : <?= @$akta->akta_cerai_nomor ?> <br><br>
 						Jenis Kelamin : <?= @$akta->akta_cerai_jk ?> <br><br>
 						No HP : <?= @$akta->no_hp ?><br><br>
-						Alamat : <?= @$akta->akta_cerai_alamat_baru ?> <br><br>
+						Alamat : <?= @$akta->akta_cerai_alamat_lama ?> <br><br>
 
 						Mengajukan Permohonan Layanan Antar Jemput Sidang Difabel, untuk memudahkan saya dalam melaksanakan persidangan ataupun layanan persidangan lainnya.<br>
 						Demikian permohonan ini saya buat, besar harapan untuk saya dapat dibantu, Atas perhatiannya diucapkan terima kasih.

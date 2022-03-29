@@ -36,7 +36,12 @@ class Ajesd extends MY_Controller
 		$tanggal_sekarang = date('Y-m-d');
 		$tanggal_sidang = @$i->akta_cerai_tanggal;
 		$id = @$i->akta_cerai_id;
-
+		if ($tanggal_sekarang > $tanggal_sidang) {
+			// var_dump($tanggal_sidang);
+			$akta_cerai_status = "Selesai";
+			$data = ['akta_cerai_status' => $akta_cerai_status,];
+			$this->akta_cerai_m->update($id, $data);
+		}
 		// var_dump($id);
 		if ($this->data['token']['role'] == 'Operator Pengadilan') {
 			$this->data['akta'] = $this->akta_cerai_m->get_by_user($username);
@@ -45,12 +50,6 @@ class Ajesd extends MY_Controller
 			$this->data['content']  = 'akta_cerai/akta_cerai';
 
 			$this->template($this->data);
-			if ($tanggal_sekarang > $tanggal_sidang) {
-				// var_dump($tanggal_sidang);
-				$akta_cerai_status = "Selesai";
-				$data = ['akta_cerai_status' => $akta_cerai_status,];
-				$this->akta_cerai_m->update($id, $data);
-			}
 		} else {
 			$this->data['akta'] = $this->akta_cerai_m->get_akta_by();
 			$this->data['kecamatan'] = $this->kecamatan_m->get();
@@ -72,7 +71,12 @@ class Ajesd extends MY_Controller
 		$tanggal_sekarang = date('Y-m-d');
 		$tanggal_sidang = @$i->akta_cerai_tanggal;
 		$id = @$i->akta_cerai_id;
-
+		if ($tanggal_sekarang > $tanggal_sidang) {
+			// var_dump($tanggal_sidang);
+			$akta_cerai_status = "Selesai";
+			$data = ['akta_cerai_status' => $akta_cerai_status,];
+			$this->akta_cerai_m->update($id, $data);
+		}
 		// var_dump($id);
 		if ($this->data['token']['role'] == 'Operator Pengadilan') {
 			$this->data['akta'] = $this->akta_cerai_m->get_by_user($username);
@@ -80,12 +84,6 @@ class Ajesd extends MY_Controller
 			$this->data['title']    = 'Data permohonan';
 			$this->data['content']  = 'akta_cerai/akta_cerai';
 			$this->template($this->data);
-			if ($tanggal_sekarang > $tanggal_sidang) {
-				// var_dump($tanggal_sidang);
-				$akta_cerai_status = "Selesai";
-				$data = ['akta_cerai_status' => $akta_cerai_status,];
-				$this->akta_cerai_m->update($id, $data);
-			}
 		} else {
 			$this->data['akta'] = $this->akta_cerai_m->get_akta_by();
 			$this->data['kecamatan'] = $this->kecamatan_m->get();
@@ -107,7 +105,12 @@ class Ajesd extends MY_Controller
 		$tanggal_sekarang = date('Y-m-d');
 		$tanggal_sidang = @$i->akta_cerai_tanggal;
 		@$id = @$i->akta_cerai_id;
-
+		if ($tanggal_sekarang > $tanggal_sidang) {
+			// var_dump($tanggal_sidang);
+			$akta_cerai_status = "Selesai";
+			$data = ['akta_cerai_status' => $akta_cerai_status,];
+			$this->akta_cerai_m->update($id, $data);
+		}
 		// var_dump($tanggal_sidang);
 		if ($this->data['token']['role'] == 'Operator Pengadilan') {
 			$this->data['akta'] = $this->akta_cerai_m->get_by_pendaftaran($username);
@@ -115,18 +118,6 @@ class Ajesd extends MY_Controller
 			$this->data['title']    = 'Permohonan Antar Jemput Pendaftaran Perkara';
 			$this->data['content']  = 'akta_cerai/pendaftaran';
 			$this->template($this->data);
-			if ($tanggal_sekarang > $tanggal_sidang) {
-				// var_dump($tanggal_sidang);
-				$akta_cerai_status = "Selesai";
-				$data = ['akta_cerai_status' => $akta_cerai_status,];
-				$this->akta_cerai_m->update($id, $data);
-			}
-			if ($tanggal_sekarang == $tanggal_sidang) {
-				// var_dump($tanggal_sidang);
-				$akta_cerai_status = "Bersiaplah Petugas Menuju Ke Lokasi";
-				$data = ['akta_cerai_status' => $akta_cerai_status,];
-				$this->akta_cerai_m->update($id, $data);
-			}
 		} else {
 			$this->data['akta'] = $this->akta_cerai_m->get_akta_by();
 			$this->data['kecamatan'] = $this->kecamatan_m->get();
@@ -147,7 +138,12 @@ class Ajesd extends MY_Controller
 		$tanggal_sekarang = date('Y-m-d');
 		$tanggal_sidang = @$i->akta_cerai_tanggal;
 		$id = @$i->akta_cerai_id;
-
+		if ($tanggal_sekarang > $tanggal_sidang) {
+			// var_dump($tanggal_sidang);
+			$akta_cerai_status = "Selesai";
+			$data = ['akta_cerai_status' => $akta_cerai_status,];
+			$this->akta_cerai_m->update($id, $data);
+		}
 		// var_dump($id);
 		if ($this->data['token']['role'] == 'Operator Pengadilan') {
 			$this->data['akta'] = $this->akta_cerai_m->get_by_produk($username);
@@ -155,12 +151,6 @@ class Ajesd extends MY_Controller
 			$this->data['title']    = 'Permohonan Antar Jemput Pengambilan Produk Pengadilan';
 			$this->data['content']  = 'akta_cerai/produk';
 			$this->template($this->data);
-			if ($tanggal_sekarang > $tanggal_sidang) {
-				// var_dump($tanggal_sidang);
-				$akta_cerai_status = "Selesai";
-				$data = ['akta_cerai_status' => $akta_cerai_status,];
-				$this->akta_cerai_m->update($id, $data);
-			}
 		} else {
 			$this->data['akta'] = $this->akta_cerai_m->get_akta_by();
 			$this->data['kecamatan'] = $this->kecamatan_m->get();
@@ -196,7 +186,20 @@ class Ajesd extends MY_Controller
 	}
 	public function penjemputan()
 	{
-
+		$akta = $this->akta_cerai_m->get_penjemputan_spesifik($this->data['token']['role']);
+		foreach ($akta as $v => $i) :
+			@$i->akta_cerai_tanggal;
+		endforeach;
+		$tanggal_sekarang = date('Y-m-d');
+		$tanggal_sidang = @$i->akta_cerai_tanggal;
+		$id = @$i->akta_cerai_id;
+		var_dump(@$i->akta_cerai_tanggal);
+		if ($tanggal_sekarang > $tanggal_sidang) {
+			// var_dump($tanggal_sidang);
+			$akta_cerai_status = "Selesai";
+			$data = ['akta_cerai_status' => $akta_cerai_status,];
+			$this->akta_cerai_m->update($id, $data);
+		}
 		$this->data['akta_fix'] = $this->akta_cerai_m->get_penjemputan($this->data['token']['role']);
 		$this->data['title']    = 'Proses Penjemputan';
 		$this->data['content']  = 'akta_cerai/penjemputan';

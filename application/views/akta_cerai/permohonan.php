@@ -120,7 +120,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalAdd">Data Permohonan</h5>
+        <h5 class="modal-title" id="modalAdd">Data Permohonan Antar Jemput Pendaftaran Perkara</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -142,9 +142,7 @@
             <div class="tab-content" id="pills-tabContent-1">
               <div class="tab-pane fade show active" id="pills-home-fill" role="tabpanel" aria-labelledby="pills-home-tab-fill">
                 <div id="dump_identitas"></div>
-                <?php if ($token['role'] == ROLE_AKSES['OPERATOR_DUKCAPIL']) :  ?>
-                  <textarea class="form-control cditolak" id="keterangan" placeholder="Tulis disini Keterangan / Alasan Jika Ditolak" name="keterangan"></textarea>
-                <?php endif; ?>
+
               </div>
               <div class="tab-pane fade" id="pills-profile-fill" role="tabpanel" aria-labelledby="pills-profile-tab-fill">
                 <div id="dump_file"></div>
@@ -160,9 +158,8 @@
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
           <?php if ($token['role'] == ROLE_AKSES['OPERATOR_DUKCAPIL']) :  ?>
-            <?php if ($i->akta_cerai_status != AKTA_STATUS['DITOLAK']) :  ?>
-              <button type="submit" class="btn btn-primary">Proses</button>
-              <!-- <button type="submit" class="btn btn-danger" name="ditolak" value="ditolak">Tolak</button> -->
+            <?php if ($i->akta_cerai_status != AKTA_STATUS['DITOLAK']) : ?>
+              <button type="submit" class="btn btn-primary ">Proses</button>
             <?php endif; ?>
           <?php endif; ?>
 

@@ -10,7 +10,7 @@ $(document).ready(function() {
 } );
 
 function view_akta(id,role){
-	$.get(base_url + "akta_cerai/get_json", { id: id } )
+	$.get(base_url + "ajesd/get_json", { id: id } )
 	.done(function( data ) {
 		data = JSON.parse(data);
 		
@@ -388,7 +388,7 @@ if (data[0].akta_cerai_status == 'proses') {
 
 
 function selesai_view_akta(id){
-	$.get(base_url + "akta_cerai/get_json", { id: id } )
+	$.get(base_url + "ajesd/get_json", { id: id } )
 	.done(function( data ) {
 		data = JSON.parse(data);
 		
@@ -616,7 +616,7 @@ function edit_akta(id){
 	let kecamatan_id = $('#edit_kecamatan_id').val();
 	get_desa(kecamatan_id);
 
-	$.get(base_url + "akta_cerai/get_json", { id: id } )
+	$.get(base_url + "ajesd/get_json", { id: id } )
 	.done(function( data ) {
 		data = JSON.parse(data);
 		
@@ -668,7 +668,7 @@ $('.custom-file-input').on('change',function(e){
 
 
 function get_desa(kecamatan_id){
-	$.get( base_url + "akta_cerai/get_desa", { kecamatan_id: kecamatan_id } )
+	$.get( base_url + "ajesd/get_desa", { kecamatan_id: kecamatan_id } )
 	.done(function( data ) {
 		data = JSON.parse(data);
 		let htm = '';

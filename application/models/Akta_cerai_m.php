@@ -64,6 +64,15 @@ class Akta_cerai_m extends MY_Model
 		$q = $this->db->query("SELECT * FROM akta_cerai WHERE akta_cerai_status = 'Disetujui Penjemputan' || akta_cerai_status = 'Bersiaplah Petugas Menuju Ke Lokasi' ORDER BY akta_cerai_tanggal ASC, akta_cerai_id DESC ")->result();
 		return $q;
 	}
+	public function get_penjemputan_spesifik($role)
+	{
+		/*$sql  = " SELECT * FROM akta_cerai ";
+		$sql .= " WHERE akta_cerai_id IS NOT NULL ";*/
+		/*if ($role == ROLE_AKSES['OPERATOR_DUKCAPIL']) {
+		}*/
+		$q = $this->db->query("SELECT * FROM akta_cerai WHERE akta_cerai_status = 'Bersiaplah Petugas Menuju Ke Lokasi' ORDER BY akta_cerai_tanggal ASC, akta_cerai_id DESC ")->result();
+		return $q;
+	}
 	public function get_akta_by_fix_user($username)
 	{
 		/*$sql  = " SELECT * FROM akta_cerai ";

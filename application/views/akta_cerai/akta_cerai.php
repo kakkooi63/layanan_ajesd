@@ -161,7 +161,7 @@
                 <div class="form-group">
                   <?php
                   $stop_date = date('Y-m-d');
-                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +3 day'));
+                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +2 day'));
 
                   ?>
                   <label>Tanggal Penjemputan:</label>
@@ -357,7 +357,7 @@
                 <div class="form-group">
                   <?php
                   $stop_date = date('Y-m-d');
-                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +3 day'));
+                  $stop_date = date('Y-m-d', strtotime($stop_date . ' +2 day'));
 
                   ?>
                   <label>Tanggal Penjemputan:</label>
@@ -450,7 +450,7 @@
                   <input type="text" class="inputAddress input-xxxlarge form-control" value="Jl. Merdeka LK. I No.497, Lingkungan 1, Serasan Jaya, Sekayu, Kabupaten Musi Banyuasin, Sumatera Selatan 30711, Indonesia" name="inputAddress" autocomplete="off" placeholder="Type in your address" id="titik_lokasi">
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6" hidden>
                 <div class="form-group">
                   <label>Latitude</label>
                   <input type="text" class="latitude form-control" id="latitude" name="latitude" readonly>
@@ -519,7 +519,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalAdd">Delete Akta Cerai</h5>
+        <h5 class="modal-title" id="modalAdd">Delete Data Permohonan</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
